@@ -34,7 +34,7 @@ class Character
             this->mind = mind;
         }
         ~Character() {}
-        void Moshowinfo (char* weapon){
+        virtual void Moshowinfo (char* weapon){
             cout<<"Name : "<<name<<endl;
             cout<<"Weapon : "<<weapon<<endl;
             cout<<"Level : "<<level<<endl;

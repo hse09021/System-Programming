@@ -1,8 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <string.h>
 #include <stdlib.h>
-#include <time.h>
 #define MAX 50
  
 using namespace std;

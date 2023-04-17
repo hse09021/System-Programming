@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #define MAX 50
@@ -11,15 +10,15 @@ using namespace std;
 class Character
 {
     private:
-        char* name;    // Ä³¸¯ÅÍ ÀÌ¸§
-        int level;      // Ä³¸¯ÅÍ ·¹º§ 
-        int power;      // Ä³¸¯ÅÍ Èû
-        int quickly;    // Ä³¸¯ÅÍ ¹ÎÃ¸
-        int iq;         // Ä³¸¯ÅÍ Áö´É
-        int attack;    // Ä³¸¯ÅÍ °ø°æ    
-        int shield;     // Ä³¸¯ÅÍ ¹æ¾î·Â
-        int health;     // Ä³¸¯ÅÍ Ã¼·Â
-        int mind;       // Ä³¸¯ÅÍ Á¤½Å·Â 
+        char* name;    // ìºë¦­í„° ì´ë¦„
+        int level;      // ìºë¦­í„° ë ˆë²¨ 
+        int power;      // ìºë¦­í„° í˜
+        int quickly;    // ìºë¦­í„° ë¯¼ì²©
+        int iq;         // ìºë¦­í„° ì§€ëŠ¥
+        int attack;    // ìºë¦­í„° ê³µê²½    
+        int shield;     // ìºë¦­í„° ë°©ì–´ë ¥
+        int health;     // ìºë¦­í„° ì²´ë ¥
+        int mind;       // ìºë¦­í„° ì •ì‹ ë ¥ 
 
     public:
 
@@ -34,18 +33,18 @@ class Character
             this->health = health;
             this->mind = mind;
         }
-        ~Character() {}  // °¡»ó Charactor Å¬·¡½º »ı¼º
+        ~Character() {}  // ê°€ìƒ Charactor í´ë˜ìŠ¤ ìƒì„±
         void Moshowinfo (char* weapon){
-            cout<<"Ä³¸¯ÅÍ ÀÌ¸§ : "<<name<<endl;
-            cout<<"Ä³¸¯ÅÍ ¹«±â : "<<weapon<<endl;
-            cout<<"Ä³¸¯ÅÍ ·¹º§ : "<<level<<endl;
-            cout<<"Ä³¸¯ÅÍ Èû : "<<power<<endl;
-            cout<<"Ä³¸¯ÅÍ ¹ÎÃ¸ : "<<quickly<<endl;
-            cout<<"Ä³¸¯ÅÍ Áö´É : "<<iq<<endl;
-            cout<<"Ä³¸¯ÅÍ °ø°İ : "<<attack<<endl;
-            cout<<"Ä³¸¯ÅÍ ¹æ¾î·Â : "<<shield<<endl;
-            cout<<"Ä³¸¯ÅÍ Ã¼·Â : "<<health<<endl;
-            cout<<"Ä³¸¯ÅÍ Á¤½Å·Â : "<<mind<<endl;
+            cout<<"ìºë¦­í„° ì´ë¦„ : "<<name<<endl;
+            cout<<"ìºë¦­í„° ë¬´ê¸° : "<<weapon<<endl;
+            cout<<"ìºë¦­í„° ë ˆë²¨ : "<<level<<endl;
+            cout<<"ìºë¦­í„° í˜ : "<<power<<endl;
+            cout<<"ìºë¦­í„° ë¯¼ì²© : "<<quickly<<endl;
+            cout<<"ìºë¦­í„° ì§€ëŠ¥ : "<<iq<<endl;
+            cout<<"ìºë¦­í„° ê³µê²© : "<<attack<<endl;
+            cout<<"ìºë¦­í„° ë°©ì–´ë ¥ : "<<shield<<endl;
+            cout<<"ìºë¦­í„° ì²´ë ¥ : "<<health<<endl;
+            cout<<"ìºë¦­í„° ì •ì‹ ë ¥ : "<<mind<<endl;
         }
         
 };
@@ -53,70 +52,70 @@ class Character
 class Warrior: public Character
 {
     private:
-        char* weapon = new char[MAX];     // ¹«±â 
+        char* weapon = new char[MAX];     // ë¬´ê¸° 
     public:
         Warrior(char* name, char* weapon) 
          : Character(name, 1, 100, 50, 20, 5, 3, 80,20)
         {
             this->weapon = weapon;
             // strcpy(this->weapon, weapon);
-        }    // Warrior µğÆúÆ® »ı¼ºÀÚ 
+        }    // Warrior ë””í´íŠ¸ ìƒì„±ì 
         void attack(){
-            cout<<this->weapon<<" Ä®·Î Âñ·¶½À´Ï´Ù."<<endl;
+            cout<<this->weapon<<" ì¹¼ë¡œ ì°”ë €ìŠµë‹ˆë‹¤."<<endl;
         }
         void showInfo(){
             Moshowinfo(weapon);
         }
         void move(){
-            cout<<"ÀÌµ¿ÇÏ¿´½À´Ï´Ù."<<endl;
+            cout<<"ì´ë™í•˜ì˜€ìŠµë‹ˆë‹¤."<<endl;
         }
-        ~Warrior() {}   // Warrior »ı¼ºÀÚ »èÁ¦ 
+        ~Warrior() {}   // Warrior ìƒì„±ì ì‚­ì œ 
 };
 
 class Archer: public Character
 {
     private:
-        char* weapon;     // ¹«±â
+        char* weapon;     // ë¬´ê¸°
     public:
         Archer(char* name, char* weapon) 
             : Character(name, 1, 50, 100, 20, 5, 3, 50,50)
         {
             this->weapon = weapon;
             // strcpy(this->weapon, weapon);
-        }   // Archer µğÆúÆ® »ı¼ºÀÚ 
+        }   // Archer ë””í´íŠ¸ ìƒì„±ì 
         void attack(){
-            cout<<this->weapon<<" È­»ìÀ» ½ú½À´Ï´Ù."<<endl;
+            cout<<this->weapon<<" í™”ì‚´ì„ ìˆìŠµë‹ˆë‹¤."<<endl;
         }
         void showInfo(){
             Moshowinfo(weapon);
         }
         void move(){
-            cout<<"ÀÌµ¿ÇÏ¿´½À´Ï´Ù."<<endl;
+            cout<<"ì´ë™í•˜ì˜€ìŠµë‹ˆë‹¤."<<endl;
         }
-        ~Archer() {}   // Archer »ı¼ºÀÚ »èÁ¦ 
+        ~Archer() {}   // Archer ìƒì„±ì ì‚­ì œ 
 };
 
 class Sorcerer: public Character
 {
     private:
-        char* weapon;     // ¹«±â
+        char* weapon;     // ë¬´ê¸°
     public:
         Sorcerer(char* name, char* weapon)
             : Character(name, 1, 20, 50, 100, 5, 3, 20,80)
         {
             this->weapon = weapon;
             // strcpy(this->weapon, weapon);
-        }    // Sorcerer µğÆúÆ® »ı¼ºÀÚ 
+        }    // Sorcerer ë””í´íŠ¸ ìƒì„±ì 
         void attack(){
-            cout<<this->weapon<<"¸¶¹ıÀ» °É¾ú½À´Ï´Ù."<<endl;
+            cout<<this->weapon<<"ë§ˆë²•ì„ ê±¸ì—ˆìŠµë‹ˆë‹¤."<<endl;
         }
         void showInfo(){
             Moshowinfo(weapon);
         }
         void move(){
-            cout<<"ÀÌµ¿ÇÏ¿´½À´Ï´Ù."<<endl;
+            cout<<"ì´ë™í•˜ì˜€ìŠµë‹ˆë‹¤."<<endl;
         }
-        ~Sorcerer() {}   // Sorcerer »ı¼ºÀÚ »èÁ¦ 
+        ~Sorcerer() {}   // Sorcerer ìƒì„±ì ì‚­ì œ 
 };
 
 class Bag
@@ -134,7 +133,7 @@ class Bag
                 return "False";
         }
         void Size(int size){
-            cout<<"ÇöÀç bagÀÇ »çÀÌÁî´Â "<<size<<" ÀÔ´Ï´Ù."<<endl;
+            cout<<"í˜„ì¬ bagì˜ ì‚¬ì´ì¦ˆëŠ” "<<size<<" ì…ë‹ˆë‹¤."<<endl;
         }
         
 };
@@ -145,28 +144,28 @@ int main()
     char* weapon = new char[MAX];
     Bag bg;
     bg.Size(0);
-    cout<<"IsEmpty °ªÀº "<<bg.IsEmpty(0)<<" ÀÔ´Ï´Ù."<<endl;
-    cout<<"Warrior Ä³¸¯ÅÍ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
+    cout<<"IsEmpty ê°’ì€ "<<bg.IsEmpty(0)<<" ì…ë‹ˆë‹¤."<<endl;
+    cout<<"Warrior ìºë¦­í„° ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ";
     cin>>name;
-    cout<<"¹«±â ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
+    cout<<"ë¬´ê¸° ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ";
     cin>>weapon;
     Warrior wa(name, weapon);
     wa.attack();
     wa.showInfo();
     wa.move();
 
-    cout<<"Archer Ä³¸¯ÅÍ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
+    cout<<"Archer ìºë¦­í„° ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ";
     cin>>name;
-    cout<<"¹«±â ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
+    cout<<"ë¬´ê¸° ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ";
     cin>>weapon;
     Archer Ar(name, weapon);
     Ar.attack();
     Ar.showInfo();
     Ar.move();
 
-    cout<<"Sorcerer Ä³¸¯ÅÍ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
+    cout<<"Sorcerer ìºë¦­í„° ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ";
     cin>>name;
-    cout<<"¹«±â ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
+    cout<<"ë¬´ê¸° ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ";
     cin>>weapon;
     Sorcerer So(name, weapon);
     So.attack();

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <string.h>
-#include <stdio.h>
+#include <string>
 #include <stdlib.h>
 #include <time.h>
 #define MAX 50
